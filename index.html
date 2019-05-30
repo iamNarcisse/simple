@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta content="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test One</title>
+   <link rel="stylesheet" href="main.css">
+   
+  </head>
+  <body>
+    <div class="container">
+
+        <form>
+            <h3>Welcome, Create an Account</h3>
+              <div>
+                  <input type="text" id="name" placeholder="Enter your name"></input>
+                </div>
+    
+                <div>
+                    <input type="email" id="email" placeholder="Enter your Email"></input>
+                  </div>
+    
+                  <div>
+                      <input type="password" id="password" placeholder="Enter your password"></input>
+                    </div>
+    
+                    <div>
+                        <input type="password" id="confirmPassword" placeholder="Confirm password"></input>
+                      </div>
+    
+                     <!----<div>
+                        <span>Country</span>
+                          <select>
+                        
+                              <option value="nigeria">Nigeria</option>
+                              <option value="USA">USA</option>
+                              <option value="Ghanan">Ghana</option>
+                              <option value="UK">UK</option>
+                              <option value="Israel">Israel</option>
+                              <option value="Egypt">Egypt</option>
+                              <option value="Australia">Australia</option>
+                            </select>
+    
+                          </div> -->
+    
+                      
+    
+                      <button id="submit">Submit</button>
+          </form>
+
+
+
+    </div>
+
+
+    <script>
+    var button = document.getElementById("submit");
+    var confirmPassword = document.getElementById("confirmPassword");
+    var password = document.getElementById("password");
+
+    button.addEventListener("click", function(e){
+      e.preventDefault();
+
+      console.log(password.value)
+      if(!password.value && !confirmPassword.value){
+        alert("Kindly fill your password and confirm password")
+        return;
+      }
+      if(!password.value) {
+        alert("Password wasn't filled")
+        return;
+      }
+
+      if(!confirmPassword.value) {
+        alert("Confirm password must not be empty")
+        return;
+      }
+      if(password.value !== confirmPassword.value) {
+        alert("Password mismatch")
+      return;
+      }else {
+        alert("Password matched")
+      }
+    })
+    </script>
+  </body>
+</html>
